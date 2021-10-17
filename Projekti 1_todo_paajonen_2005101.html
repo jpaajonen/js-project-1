@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Projekti 1 (Paajonen)</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <script>
+//        var index = 0;
+
+        function addTask() {
+            var table = document.getElementById("tbody");
+            var field = document.getElementById("tekstikentta");          
+            
+            if (field.value.length < 3) {
+                alert("Kirjoita oikea tehtävä!");
+                field.style.borderColor = "red";
+            } else {
+                field.style.borderColor = "black";
+                                
+            var row = table.insertRow(-1);
+            
+//            row.id = "taskId" + index;
+//            var tunniste = "taskId" + index;
+//            index++;
+            var cell = row.insertCell(0);
+ //           cell.class = "taskId";
+            cell.onclick = function uncheck() {
+                row.style = "text-decoration: none"
+            }
+
+//            cell.appendChild(field);
+            cell.innerHTML = field.value;
+            
+            
+            }
+
+            field.value = "";
+            
+            
+            //Lisätään checkbox riville
+            var cell2 = row.insertCell(1);
+            var valinta = document.createElement("input");
+            valinta.onclick = function check() {
+                row.style = "text-decoration: line-through";
+             
+            }
+
+            valinta.type = "checkbox";
+            valinta.name = "cbox";
+            valinta.id = "cb";
+            cell2.appendChild(valinta);
+
+
+            //alert(table.rows.length);
+            //var kohta = document.querySelector("td");
+            //kohta.setAttribute ("class", "tunniste");
+            //var elementti = document.getElementById("tunniste");
+            //tunniste.addEventListener("click", removeTask());
+            //alert(kohta);
+
+        }
+
+            function removeTask() {
+                var table = document.getElementById("ToDoListTable").tBodies[0];
+ //               alert(table);
+                var rowCount = table.rows.length;
+ //               alert(rowCount);
+
+                for (var i = 0; i < rowCount; i++) {
+                    var row  = table.rows[i];
+ //                   alert(row);
+                    var cb = row.cells[1].getElementsByTagName("input")[0];
+                    if ("checkbox" == cb.type && true == cb.checked) {
+                        table.deleteRow(i);
+                        i--;
+                    }
+                }
+                }
+                
+            /*    function removeTask(r) {
+                    var i = r.parentNode.parentNode.rowIndex;
+                    document.getElementById("ToDoListTable").deleteRow(i);
+                */
+
+                //var table = document.getElementById("tbody");
+                //var rowCount = table.rows.length;
+
+                //niin kauan kun indeksi on alle rowCount (5), suoritetaan ja lisätään i:hin yksi
+                //for (var i = 0; i < rowCount ; i++) {
+                    //muuttuja rivi = taulukon rivin i sisältö
+                    //var rivi = table.rows[i];                    
+                    //alert(rivi);
+                    //var tarkistus = document.getElementsByTagName("input");
+                    //var tarkistus = rivi.cells[1].childNodes[0];
+                    //var tarkistus = rivi.cells[i];
+                   //alert(tarkistus);
+                     //   if (tarkistus != null && tarkistus.checked == true) {
+                       //     table.deleteRow[i];
+                         //   i--;
+                        //}
+//                }
+         //   var poistettava = document.getElementById("tbody");
+         //   poistettava.style = "text-decoration: line-through";
+
+
+
+    </script>
+
+    <table id="ToDoListTable" width="400px" border="1">
+        <thead>
+            <tr>
+                <th>To do -lista</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+        <tfoot></tfoot>
+    </table>
+    <p>
+        Tehtävä
+        <label for="tekstikentta">:</label>
+        <input type="text" name="teksti" id="tekstikentta" placeholder="Kirjoita tehtävä...">
+        <br>
+        <button onclick="addTask('ToDoListTable')" id="adder">Lisää</button>
+        <button onclick="removeTask('ToDoListTable')" id="remover">Poista</button>
+        <!--<input type="button" onclick="insertRows()" name="Insert" id="Insert" value="Insert">-->
+    </p>
+
+    <!--   <p></p>
+    <p></p>
+
+    <h1>Please fill in your data</h1>
+    <form name="myForm" action="#" onsubmit="return validateForm()" method="post">
+        First name: <input type="text" name="fname"> <br/>
+        Last name: <input type="text" name="lname"> <br/>
+        <input type="submit" value="Send it!">
+    </form>
+-->
+
+
+
+</body>
+
+</html>

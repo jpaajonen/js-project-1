@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Projekti 1 (Paajonen)</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!--luodaan taulukko, jolle määritetään id-->
+    <table id="ToDoListTable" width="400px" border="1">
+        <thead>
+            <tr>
+                <!--lisätään otsikko-->
+                <th>To do -lista</th>
+            </tr>
+        </thead>
+        <!--annetaan id-->
+        <tbody id="tbody">
+        </tbody>
+    </table>
+    <p>
+        <!--otsikoidaan tekstikenttä-->
+        Tehtävä
+        <label for="tekstikentta">:</label>
+        <!--määritellään tekstikentän nimi ja id. kirjoitetaan käyttöä selventävä teksti kenttään-->
+        <input type="text" name="teksti" id="tekstikentta" placeholder="Kirjoita tehtävä...">
+        <br>
+        <!--luodaan kaksi painiketta, joihin lisätään event listenerit, jotka kutsuvat halutut funktiot-->
+        <button onclick="addTask('ToDoListTable')" id="adder">Lisää</button>
+        <button onclick="removeTask('ToDoListTable')" id="remover">Poista</button>
+    </p>
+    <!--haetaan javascript-funktiot erillisesta tiedostosta-->
+    <script src="js/jscript.js"></script>
+</body>
+</html>
