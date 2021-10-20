@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Projekti 1 (Paajonen)</title>
+    <!--refer to the external stylesheet-->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!--create a table with class and id-->
+    <table class=tableMain id="ToDoListTable">
+        <thead>
+            <tr>
+                <!--add a headline-->
+                <th>To-do list</th>
+            </tr>
+        </thead>
+        <!--assign id-->
+        <tbody id="tbody">
+        </tbody>
+    </table>
+    <p>
+        <!--label the textfield and assign id-->
+        <label for="tfield" id="heading">Task:</label>
+        <!--assign input type, name, id and a placeholder text-->
+        <input type="text" name="txt" id="tfield" placeholder="Write a task...">
+        <br>
+        <!--create two buttons with event listeners that call for specific functions-->
+        <button onclick="addTask('ToDoListTable')" id="adder" class="presser">Add</button>
+        <button onclick="removeTask('ToDoListTable')" id="remover" class="presser">Remove</button>
+    </p>
+    <!--refer to the external javascript file-->
+    <script src="js/jscript.js"></script>
+</body>
+</html>
