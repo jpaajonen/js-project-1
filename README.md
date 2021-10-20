@@ -14,4 +14,8 @@ The list gives out an alert if the task is empty/too short.
 - The application uses DOM scripting.
 - The source coding is publised in Github.
 - The application has been published in Netlify.
-- Apart from the saving the information in the browser, the requirements are met.
+
+Apart from saving the information in the browser, the requirements are met.
+Unfortunately I ran out of time before I could come to grips with local storage.
+
+Taking all this into consideration, I'd evaluate the project as satisfactory.
