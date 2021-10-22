@@ -1,7 +1,7 @@
 
 //add a function for the to do list
 function addTask() {
-    //add the body of the table to a variable
+    //pass the body of the table to a variable
     var table = document.getElementById("tbody");
     //add the textfield to a variable
     var field = document.getElementById("tfield");
