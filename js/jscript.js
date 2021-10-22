@@ -3,7 +3,7 @@
 function addTask() {
     //pass the body of the table to a variable
     var table = document.getElementById("tbody");
-    //add the textfield to a variable
+    //pass the textfield to a variable
     var field = document.getElementById("tfield");
     //check that the input is not empty/too short
     if (field.value.length < 3) {
